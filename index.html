@@ -1,0 +1,1374 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía de Estudio Integrada — Comunicación Visual II</title>
+    <style>
+        :root {
+            --color-primario: #1a1a2e;
+            --color-secundario: #16213e;
+            --color-acento: #e94560;
+            --color-texto: #333;
+            --color-fondo: #f8f9fa;
+            --color-caja: #fff;
+            --color-borde: #dee2e6;
+            --color-ok: #28a745;
+            --color-info: #17a2b8;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: var(--color-fondo);
+            color: var(--color-texto);
+            line-height: 1.7;
+        }
+        .container { max-width: 1000px; margin: 0 auto; padding: 20px; }
+        header {
+            background: linear-gradient(135deg, var(--color-primario), var(--color-secundario));
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            border-radius: 0 0 20px 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        header h1 { font-size: 2rem; margin-bottom: 10px; }
+        header .sub { font-size: 1.1rem; opacity: 0.9; }
+        header .institucion { font-size: 0.95rem; margin-top: 8px; color: #ccc; }
+        nav {
+            background: var(--color-caja);
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            position: sticky;
+            top: 10px;
+            z-index: 100;
+        }
+        nav ul { list-style: none; display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
+        nav li a {
+            text-decoration: none;
+            color: var(--color-primario);
+            font-weight: 600;
+            padding: 6px 14px;
+            border-radius: 20px;
+            background: #f0f0f0;
+            transition: all 0.3s;
+            font-size: 0.85rem;
+        }
+        nav li a:hover { background: var(--color-acento); color: white; }
+        section {
+            background: var(--color-caja);
+            padding: 30px;
+            margin-bottom: 25px;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+        }
+        section h2 {
+            color: var(--color-primario);
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid var(--color-acento);
+        }
+        section h3 {
+            color: var(--color-secundario);
+            font-size: 1.25rem;
+            margin: 25px 0 12px 0;
+        }
+        section h4 {
+            color: var(--color-texto);
+            font-size: 1.05rem;
+            margin: 18px 0 8px 0;
+            font-weight: 700;
+        }
+        .tag {
+            display: inline-block;
+            padding: 2px 10px;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-right: 6px;
+        }
+        .tag-nuevo { background: #f8d7da; color: #721c24; }
+        .tag-viejo { background: #e2e3e5; color: #383d41; }
+        .tag-complemento { background: #fff3cd; color: #856404; }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            font-size: 0.95rem;
+        }
+        th, td {
+            border: 1px solid var(--color-borde);
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background: var(--color-primario);
+            color: white;
+            font-weight: 600;
+        }
+        tr:nth-child(even) { background: #f8f9fa; }
+        .caja-importante {
+            background: #fff3cd;
+            border-left: 5px solid #ffc107;
+            padding: 15px 20px;
+            margin: 15px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .caja-info {
+            background: #d1ecf1;
+            border-left: 5px solid var(--color-info);
+            padding: 15px 20px;
+            margin: 15px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .caja-ok {
+            background: #d4edda;
+            border-left: 5px solid var(--color-ok);
+            padding: 15px 20px;
+            margin: 15px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .caja-acento {
+            background: #f8d7da;
+            border-left: 5px solid var(--color-acento);
+            padding: 15px 20px;
+            margin: 15px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .caja-viejo {
+            background: #f1f3f5;
+            border-left: 5px solid #6c757d;
+            padding: 15px 20px;
+            margin: 15px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .caja-complemento {
+            background: #fff8e1;
+            border-left: 5px solid #fd7e14;
+            padding: 15px 20px;
+            margin: 15px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        ul, ol { margin-left: 25px; margin-bottom: 15px; }
+        li { margin-bottom: 6px; }
+        .pregunta {
+            background: #f1f3f5;
+            padding: 12px 16px;
+            margin: 10px 0;
+            border-radius: 8px;
+            border-left: 4px solid var(--color-secundario);
+        }
+        .termino {
+            font-weight: 700;
+            color: var(--color-primario);
+        }
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: #666;
+            font-size: 0.9rem;
+        }
+        @media (max-width: 600px) {
+            header h1 { font-size: 1.4rem; }
+            nav ul { flex-direction: column; align-items: center; }
+            section { padding: 20px; }
+        }
+        .checklist { list-style: none; margin-left: 0; }
+        .checklist li::before {
+            content: "☐ ";
+            color: var(--color-acento);
+            font-size: 1.2rem;
+            margin-right: 8px;
+        }
+        .referente-card {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 12px 16px;
+            margin: 8px 0;
+            border-left: 3px solid var(--color-acento);
+        }
+        .referente-card strong { color: var(--color-primario); }
+        .referente-card a {
+            color: var(--color-acento);
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .referente-card a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="institucion">ESCUELA PROVINCIAL DE BELLAS ARTES TOMÁS CABRERA N° 6002</div>
+    <h1>📘 Guía de Estudio Integrada</h1>
+    <div class="sub">Comunicación Visual II — 2° Año</div>
+    <div class="sub">Tecnicatura en Artes Visuales con Orientación en Diseño Gráfico</div>
+    <div class="institucion">Plan 2007/02 — Modalidad Anual — Régimen Teórico-Práctico</div>
+    <div class="institucion" style="margin-top:12px; font-size:0.85rem;">Programa 2025/2026 + Referencia histórica 2021 (Prof. Quiroga) + Material complementario</div>
+</header>
+
+<div class="container">
+
+<nav>
+    <ul>
+        <li><a href="#programa">Programa</a></li>
+        <li><a href="#eje1">Eje I</a></li>
+        <li><a href="#eje2">Eje II</a></li>
+        <li><a href="#eje3">Eje III</a></li>
+        <li><a href="#eje4">Eje IV</a></li>
+        <li><a href="#eje5">Eje V</a></li>
+        <li><a href="#investigacion">Investigación</a></li>
+        <li><a href="#evaluacion">Evaluación</a></li>
+        <li><a href="#recursos">Recursos</a></li>
+        <li><a href="#referentes">Referentes</a></li>
+        <li><a href="#preguntas">Preguntas</a></li>
+        <li><a href="#glosario">Glosario</a></li>
+        <li><a href="#bibliografia">Bibliografía</a></li>
+        <li><a href="#cronograma">Cronograma</a></li>
+    </ul>
+</nav>
+
+<section id="programa">
+    <h2>📋 Programa de Cátedra — Comunicación Visual II</h2>
+
+    <div class="caja-info">
+        <strong>Datos de la cátedra:</strong><br>
+        <strong>Cátedra:</strong> Comunicación Visual II &nbsp;|&nbsp; <strong>Año:</strong> 2°<br>
+        <strong>Modalidad:</strong> Anual &nbsp;|&nbsp; <strong>Plan:</strong> 2007/02<br>
+        <strong>Régimen:</strong> Teórico-Práctico &nbsp;|&nbsp; <strong>Horario:</strong> A definir<br>
+        <strong>Profesor/a Responsable:</strong> Lic. Gastón Iñiguez &nbsp;|&nbsp; <strong>Categoría:</strong> Interino
+    </div>
+
+    <h3>1. Fundamentos de la Asignatura</h3>
+    <p>El campo profesional del diseñador gráfico con orientación en artes visuales exige dominar el diseño como acto de comunicación material. Si en el primer año los estudiantes adquirieron los fundamentos del lenguaje visual (punto, línea, plano, color, tipografía, composición), en esta instancia se propone trasladar esas herramientas a la resolución de un <strong>objeto tridimensional con identidad propia: el Art Toy</strong>.</p>
+    <p>La asignatura conserva la estructura de ejes del programa original, pero los orienta hacia la concepción, materialización y comunicación de una pieza de diseño tridimensional. El estudiante no solo "diseña una figura", sino que resuelve un <strong>problema comunicacional completo</strong>: desde la morfología del cuerpo y la elección de materiales, hasta el packaging, la fotografía de producto y el storytelling para su difusión en redes sociales.</p>
+    <p>Se prioriza el <strong>Aprendizaje Basado en Proyectos (ABP)</strong>, donde el Art Toy funciona como hilo conductor del año lectivo. Se mantiene el carácter anual y la posibilidad de trabajo híbrido (presencial + virtual), optimizando los recursos disponibles en la institución y los materiales de fácil acceso (masillas, cartón, pintura acrílica, aerosoles, herramientas manuales).</p>
+
+    <div class="caja-viejo">
+        <span class="tag tag-viejo">Referencia 2021</span>
+        <strong>Evolución del programa:</strong> En la edición 2021 (Prof. Quiroga), la materia ya proponía incorporar el diseño 3D al campo comunicacional gráfico, con aplicaciones en packaging, stands para ferias y contenidos digitales. La estructura por ejes se mantuvo, pero el objeto de estudio evolucionó de "maqueta/stand/libro didáctico" hacia el "Art Toy" como pieza integral de comunicación.
+    </div>
+
+    <h3>2. Propósitos / Logros a Obtener</h3>
+
+    <h4>Misión General</h4>
+    <p>Al finalizar el cursado, el alumno será capaz de <strong>concebir, desarrollar, materializar y comunicar un proyecto de Art Toy integral</strong>, aplicando fundamentos de morfología tridimensional, diseño de envase, identidad visual y narrativa gráfica, en soportes físicos y digitales.</p>
+
+    <h4>Objetivos Generales</h4>
+    <ul>
+        <li>Desarrollar la capacidad de pensar tridimensionalmente a partir de elementos bidimensionales (boceto, plano, desarrollo).</li>
+        <li>Aplicar metodologías de diseño (Munari, Frascara, González Ruiz, Bonsieppe) a un proyecto concreto de objeto.</li>
+        <li>Diseñar y ejecutar packaging / blister / envoltorio coherente con la identidad de la pieza.</li>
+        <li>Generar narrativa visual y storytelling alrededor del objeto para su comunicación en redes.</li>
+        <li>Promover la vinculación con referentes locales e internacionales de la cultura del designer toy.</li>
+    </ul>
+
+    <h4>Objetivos Específicos</h4>
+    <ul>
+        <li>Diseñar la morfología de un Art Toy a partir de módulos, variaciones posicionales y estructuras tridimensionales.</li>
+        <li>Materializar la pieza mediante técnicas de modelado, ensamblaje y pintura con recursos accesibles.</li>
+        <li>Resolver el packaging como extensión comunicacional del objeto (blister, caja, base, inserto gráfico).</li>
+        <li>Producir piezas de comunicación visual (fotografía, post, story, reel) que narren el origen y la personalidad del toy.</li>
+        <li>Documentar el proceso proyectual desde el brief hasta la pieza final.</li>
+    </ul>
+</section>
+
+<section id="eje1">
+    <h2>🎯 EJE I — Morfología de las Formas Aplicada al Art Toy</h2>
+    <p><em>Del módulo al personaje</em></p>
+
+    <div class="caja-info">
+        <span class="tag tag-nuevo">Programa actual</span>
+        <strong>Conceptos clave:</strong> módulo, repetición, gradación, variaciones posicionales (rotación, traslación, escala), submódulos, supermódulos, estructuras lineales, planos seriados, estructuras de pared.
+    </div>
+
+    <h3>1.1 El módulo como semilla formal</h3>
+    <p>El <strong>módulo</strong> es la unidad básica de forma que se repite, varía y combina para generar estructuras más complejas. Es la "semilla formal" del personaje. Los elementos generadores son:</p>
+    <ul>
+        <li><strong>Punto:</strong> origen de toda forma, sin dimensión.</li>
+        <li><strong>Línea:</strong> trayectoria del punto, genera dirección y movimiento.</li>
+        <li><strong>Plano:</strong> extensión de la línea, genera superficie.</li>
+        <li><strong>Volumen:</strong> extensión del plano, genera espacio tridimensional.</li>
+    </ul>
+
+    <div class="caja-viejo">
+        <span class="tag tag-viejo">Referencia 2021</span>
+        <strong>EJE I del programa anterior (Prof. Quiroga):</strong> El módulo, repetición y gradación, estructura, organización espacial, submódulos, supermódulos, planos seriados, disección de un cubo, variaciones posicionales, variaciones de dirección, cubo/columnas/pared, estructuras de pared, células espaciales y módulos, prismas y cilindros, estructuras lineales.
+    </div>
+
+    <h3>1.2 Repetición y gradación</h3>
+    <p>La <strong>repetición</strong> de un módulo base genera series. La <strong>gradación</strong> introduce variaciones progresivas en tamaño, dirección o posición. De un módulo base se puede generar toda una <strong>familia de personajes</strong>.</p>
+
+    <h3>1.3 Submódulos y supermódulos</h3>
+    <ul>
+        <li><strong>Submódulos:</strong> unidades parciales del cuerpo del toy (cabeza, torso, extremidades) que funcionan como módulos dentro de un sistema mayor.</li>
+        <li><strong>Supermódulos:</strong> conjunto de submódulos combinados que forman una unidad estructural completa (el cuerpo entero del personaje).</li>
+    </ul>
+
+    <h3>1.4 Disección de formas</h3>
+    <p>Del cubo, prisma y cilindro al cuerpo del personaje. Se estudian tres tipos de estructuras:</p>
+    <table>
+        <tr>
+            <th>Estructura</th>
+            <th>Descripción</th>
+            <th>Aplicación al Art Toy</th>
+        </tr>
+        <tr>
+            <td><strong>Lineal</strong></td>
+            <td>Organización de módulos a lo largo de un eje</td>
+            <td>Columna vertebral, extremidades, antenas</td>
+        </tr>
+        <tr>
+            <td><strong>Planos seriados</strong></td>
+            <td>Secuencia de planos paralelos que construyen volumen por acumulación</td>
+            <td>Cuerpo segmentado, capas de armadura</td>
+        </tr>
+        <tr>
+            <td><strong>De pared</strong></td>
+            <td>Superficies que encierran un espacio</td>
+            <td>Torso, cabeza, elementos contenedores</td>
+        </tr>
+    </table>
+
+    <h3>1.5 Variaciones posicionales y direccionales</h3>
+    <p>Cómo la <strong>rotación</strong>, <strong>traslación</strong> y <strong>escala</strong> de un módulo generan actitud, personalidad y movimiento en el personaje:</p>
+    <ul>
+        <li><strong>Rotación:</strong> girar el módulo sobre un eje. Cambia la orientación y la dirección de la forma.</li>
+        <li><strong>Traslación:</strong> mover el módulo en el espacio sin rotarlo. Genera desplazamiento y ritmo.</li>
+        <li><strong>Escala:</strong> agrandar o achicar el módulo. Crea jerarquía y contraste.</li>
+    </ul>
+
+    <div class="caja-ok">
+        <strong>Ejercicio práctico:</strong> Tomá un cubo. Aplicá rotación, traslación y escala para generar 6 variaciones de un personaje. Dibujá un storyboard de poses/actitudes.
+    </div>
+
+    <h3>1.6 Células espaciales y módulos (referencia 2021)</h3>
+    <p>Del programa anterior se retoma el concepto de <strong>células espaciales</strong>: unidades mínimas de espacio que, al combinarse, generan estructuras más complejas. Los prismas y cilindros son formas básicas que, al diseccionarse y recombinarse, dan origen a la morfología del personaje.</p>
+</section>
+
+<section id="eje2">
+    <h2>🎯 EJE II — Diseño 3D y Volumen</h2>
+    <p><em>Del boceto al objeto</em></p>
+
+    <div class="caja-info">
+        <span class="tag tag-nuevo">Programa actual</span>
+        <strong>Conceptos clave:</strong> vértice, arista, cara, desarrollo de patrones, planos de corte, diseño 2D vs. 3D, masilla epoxy, cartón gris, ensamblaje, terminación.
+    </div>
+
+    <h3>2.1 Elementos conceptuales del diseño 3D</h3>
+    <table>
+        <tr>
+            <th>Elemento</th>
+            <th>Definición</th>
+            <th>Ejemplo</th>
+        </tr>
+        <tr>
+            <td><strong>Punto</strong></td>
+            <td>Posición en el espacio, sin dimensión</td>
+            <td>Origen de una forma</td>
+        </tr>
+        <tr>
+            <td><strong>Línea</strong></td>
+            <td>Trayectoria del punto, una dimensión</td>
+            <td>Arista de un cubo</td>
+        </tr>
+        <tr>
+            <td><strong>Plano</strong></td>
+            <td>Extensión de la línea, dos dimensiones</td>
+            <td>Cara de un cubo</td>
+        </tr>
+        <tr>
+            <td><strong>Volumen</strong></td>
+            <td>Extensión del plano, tres dimensiones</td>
+            <td>El cubo completo</td>
+        </tr>
+        <tr>
+            <td><strong>Vértice</strong></td>
+            <td>Punto de encuentro de dos o más aristas</td>
+            <td>Esquina de un cubo</td>
+        </tr>
+        <tr>
+            <td><strong>Arista</strong></td>
+            <td>Línea donde se encuentran dos caras</td>
+            <td>Borde de un cubo</td>
+        </tr>
+        <tr>
+            <td><strong>Cara</strong></td>
+            <td>Superficie plana que delimita un volumen</td>
+            <td>Cada lado de un cubo</td>
+        </tr>
+        <tr>
+            <td><strong>Módulo</strong></td>
+            <td>Unidad operadora de la forma</td>
+            <td>Unidad repetible del toy</td>
+        </tr>
+    </table>
+
+    <div class="caja-viejo">
+        <span class="tag tag-viejo">Referencia 2021</span>
+        <strong>EJE II del programa anterior (Prof. Quiroga):</strong> Introducción al Diseño 3D. Elementos Conceptuales: Punto, Línea, Plano y Volumen. Elementos Prácticos: Vértice, Aristas, Caras y Módulo. El plano Bidimensional: Características del Diseño 2D, Ejes X e Y. El espacio tridimensional: Características del Diseño 3D, Ejes X, Y, Z.
+    </div>
+
+    <h3>2.2 Del plano bidimensional al espacio tridimensional</h3>
+    <p><strong>Plano bidimensional (2D):</strong> Caracterizado por los ejes X (horizontal) e Y (vertical). Las aplicaciones incluyen bocetos, ilustraciones y diseños planos.</p>
+    <p><strong>Espacio tridimensional (3D):</strong> Incorpora el eje Z (profundidad). Las características del diseño 3D implican pensar en volumen, masa, peso, sombra y relación con el entorno.</p>
+
+    <h3>2.3 Desarrollo de patrones, planos de corte y armado</h3>
+    <p>El <strong>desarrollo de patrones</strong> es la representación plana (2D) de las superficies de un objeto 3D, lista para cortar, doblar y ensamblar. Los <strong>planos de corte</strong> permiten visualizar secciones internas del volumen.</p>
+
+    <h3>2.4 Diseño 2D vs. Diseño 3D</h3>
+    <table>
+        <tr>
+            <th>Aspecto</th>
+            <th>Diseño 2D</th>
+            <th>Diseño 3D</th>
+        </tr>
+        <tr>
+            <td>Dimensiones</td>
+            <td>X, Y</td>
+            <td>X, Y, Z</td>
+        </tr>
+        <tr>
+            <td>Silueta</td>
+            <td>Legible en papel</td>
+            <td>Debe traducirse a volumen</td>
+        </tr>
+        <tr>
+            <td>Percepción</td>
+            <td>Visual directa</td>
+            <td>Requiere recorrido espacial</td>
+        </tr>
+        <tr>
+            <td>Materialidad</td>
+            <td>Papel, pantalla</td>
+            <td>Masilla, cartón, pintura</td>
+        </tr>
+    </table>
+
+    <h3>2.5 Aplicaciones del diseño 3D en diseño gráfico</h3>
+    <p>El toy como pieza de comunicación, coleccionable y expresión personal. No es un juguete de producción masiva; es una pieza de autor que comunica identidad y concepto.</p>
+
+    <h3>2.6 Materiales y técnicas de construcción</h3>
+    <ul>
+        <li><strong>Masilla epoxy:</strong> El Artesano, Poxilina. Material de dos componentes (resina + endurecedor) que endurece al secarse.</li>
+        <li><strong>Cartón gris 1mm:</strong> Cartón de alta densidad para estructuras internas, prototipos y packaging.</li>
+        <li><strong>Estructuras internas:</strong> Armazones de alambre o cartón que sostienen la masilla.</li>
+        <li><strong>Ensamblaje:</strong> Unión de piezas mediante pegamento, encastre o tornillos.</li>
+        <li><strong>Lijado:</strong> Alisado de superficies para lograr terminación profesional.</li>
+        <li><strong>Terminación:</strong> Pintura acrílica, marcadores, aerosoles.</li>
+    </ul>
+
+    <div class="caja-ok">
+        <strong>Tip práctico:</strong> La masilla epoxy tiene tiempo de trabajo limitado (aprox. 30-45 min antes de endurecer). Prepará todas las herramientas antes de mezclar. Para piezas grandes, trabajá por etapas.
+    </div>
+</section>
+
+<section id="eje3">
+    <h2>🎯 EJE III — El Objeto y su Envoltorio</h2>
+    <p><em>El toy como sistema: pieza + packaging + entorno</em></p>
+    <div class="caja-info">
+        <span class="tag tag-nuevo">Programa actual</span>
+        <strong>Conceptos clave:</strong> packaging como extensión del personaje, relación contenido-contenedor, blister, caja, base, topografía del envase, quinta fachada, insertos, tarjetas de personaje.
+    </div>
+
+    <h3>3.1 El packaging como extensión del personaje</h3>
+    <p>El <strong>packaging</strong> no es solo protección: es parte del mensaje. La <strong>relación contenido-contenedor</strong> define cómo el envase comunica la identidad del toy:</p>
+    <ul>
+        <li><strong>Blister:</strong> base de cartón o cartulina cubierta por acetato transparente. Permite ver la pieza.</li>
+        <li><strong>Caja:</strong> envoltorio cerrado que genera expectativa al abrirse.</li>
+        <li><strong>Base:</strong> soporte de exhibición que presenta al personaje.</li>
+    </ul>
+
+    <div class="caja-viejo">
+        <span class="tag tag-viejo">Referencia 2021</span>
+        <strong>EJE III del programa anterior (Prof. Quiroga) — El Espacio 3D:</strong> Aplicaciones del Diseño 3D en el campo del Diseño Gráfico. Las maquetas: características y elementos (base, topografía, entorno, edificación). Bases: campo de fuerzas, relación contenido continente. Topografía: estética de los materiales, escala real y ficticia. Entorno: el detalle en el conjunto, semejanzas y contrastes, planar y volumétrico. Edificación: transparencia y opacidad. La quinta fachada. Adaptación al formato.
+    </div>
+
+    <h3>3.2 De la maqueta al packaging: evolución del concepto</h3>
+    <p>El programa anterior trabajaba la <strong>maqueta</strong> como objeto de estudio, con los siguientes elementos que se trasladan al packaging del Art Toy:</p>
+    <table>
+        <tr>
+            <th>Concepto 2021 (Maqueta)</th>
+            <th>Traducción 2025/2026 (Art Toy)</th>
+        </tr>
+        <tr>
+            <td>Base (campo de fuerzas)</td>
+            <td>Base del packaging / soporte de exhibición</td>
+        </tr>
+        <tr>
+            <td>Relación contenido-continente</td>
+            <td>Relación toy-envase (contenido-contenedor)</td>
+        </tr>
+        <tr>
+            <td>Topografía (estética de materiales)</td>
+            <td>Elección de cartón, acetato, cartulina según identidad</td>
+        </tr>
+        <tr>
+            <td>Escala real y ficticia</td>
+            <td>Escala del toy y proporción con su envase</td>
+        </tr>
+        <tr>
+            <td>Entorno (detalle en el conjunto)</td>
+            <td>Contexto de exhibición y fondos para fotografía</td>
+        </tr>
+        <tr>
+            <td>Semejanzas y contrastes</td>
+            <td>Planar vs. volumétrico en toy + packaging</td>
+        </tr>
+        <tr>
+            <td>Transparencia y opacidad</td>
+            <td>Uso de acetato (transparente) vs. cartón (opaco)</td>
+        </tr>
+        <tr>
+            <td>Quinta fachada</td>
+            <td>Dorso del packaging como espacio de información</td>
+        </tr>
+    </table>
+
+    <h3>3.3 Topografía del envase</h3>
+    <p>Estética de los materiales (cartón, acetato, cartulina), escala real y relación con la pieza. El envase debe dialogar con el toy en términos de:</p>
+    <ul>
+        <li><strong>Materialidad:</strong> ¿rústico o pulido? ¿artesanal o industrial?</li>
+        <li><strong>Color:</strong> ¿complementario o contrastante con el toy?</li>
+        <li><strong>Textura:</strong> ¿liso, rugoso, brillante, mate?</li>
+    </ul>
+
+    <h3>3.4 Entorno y exhibición</h3>
+    <p>El detalle en el conjunto. Semejanzas y contrastes entre el toy y su soporte. La relación <strong>planar y volumétrico</strong>: el packaging es plano, el toy es volumétrico; esta tensión debe resolverse de manera coherente.</p>
+
+    <h3>3.5 La "quinta fachada"</h3>
+    <p>El dorso del packaging como espacio de información. Debe contener:</p>
+    <ul>
+        <li>Nombre del personaje</li>
+        <li>Edición o numeración</li>
+        <li>Datos del autor (nombre, año, institución)</li>
+        <li>Storytelling gráfico (breve historia o descripción)</li>
+        <li>Códigos o información técnica</li>
+    </ul>
+
+    <h3>3.6 Adaptación al formato</h3>
+    <p>Diseño de insertos, tarjetas de personaje y elementos gráficos de acompañamiento. El formato debe adaptarse a la escala real del toy, los materiales disponibles y la identidad visual del personaje.</p>
+</section>
+
+<section id="eje4">
+    <h2>🎯 EJE IV — Narrativa Visual y Comunicación del Toy</h2>
+    <p><em>El personaje necesita una historia</em></p>
+    <div class="caja-info">
+        <span class="tag tag-nuevo">Programa actual</span>
+        <strong>Conceptos clave:</strong> storytelling, mythos, identidad visual, fotografía de producto, piezas para redes, comunicación transmedia.
+    </div>
+
+    <h3>4.1 Storytelling del objeto</h3>
+    <p>Del boceto al <strong>"mythos"</strong>. El personaje necesita:</p>
+    <ul>
+        <li><strong>Nombre:</strong> identificador único del personaje.</li>
+        <li><strong>Origen:</strong> ¿de dónde viene? ¿quién lo creó y por qué?</li>
+        <li><strong>Personalidad:</strong> rasgos de carácter que definen su actitud.</li>
+        <li><strong>Universo:</strong> el mundo en el que habita, sus reglas y habitantes.</li>
+    </ul>
+
+    <h3>4.2 Identidad visual del toy</h3>
+    <p>Sistema gráfico aplicado:</p>
+    <ul>
+        <li><strong>Tipografía:</strong> elección de fuentes que representen la personalidad del personaje.</li>
+        <li><strong>Paleta cromática:</strong> colores que identifican al toy y se repiten en todas las piezas.</li>
+        <li><strong>Logo / símbolo:</strong> marca gráfica del personaje, aplicable en packaging y redes.</li>
+    </ul>
+
+    <div class="caja-complemento">
+        <span class="tag tag-complemento">Material complementario</span>
+        <strong>Lenguaje Audiovisual (UNSAM, Suficiencia Técnica 2023):</strong> El lenguaje audiovisual emplea signos construidos a partir de la combinación entre el sistema de la realidad visual (imagen, texto) y el sistema de la realidad sonora (voz, música, ruido, silencio), mediados por la transformación técnico-retórica (cámaras, micrófonos, software de edición).
+    </div>
+
+    <h3>4.3 Fotografía de producto</h3>
+    <p>La fotografía es la principal herramienta de comunicación del toy. Aspectos técnicos:</p>
+    <ul>
+        <li><strong>Puesta en escena:</strong> composición del plano, fondos, elementos de acompañamiento.</li>
+        <li><strong>Iluminación básica:</strong> luz natural o artificial, dirección de la luz (frontal, lateral, trasera).</li>
+        <li><strong>Fondos:</strong> neutros para destacar la forma, o contextualizados para narrar.</li>
+        <li><strong>Ángulos:</strong> de frente, de perfil, tres cuartos, picado, contrapicado.</li>
+    </ul>
+
+    <div class="caja-complemento">
+        <span class="tag tag-complemento">Material complementario</span>
+        <strong>Escala de planos fotográficos (Lenguaje Audiovisual):</strong>
+        <ul>
+            <li><strong>Plano detalle:</strong> parte muy restringida (ojos, textura). Concentración máxima.</li>
+            <li><strong>Primer plano:</strong> toda la cabeza. Expresión del personaje.</li>
+            <li><strong>Plano medio corto:</strong> cabeza y hombros.</li>
+            <li><strong>Plano medio largo:</strong> cabeza a la cintura.</li>
+            <li><strong>Plano americano:</strong> hasta las rodillas.</li>
+            <li><strong>Plano figura entera:</strong> cuerpo completo.</li>
+            <li><strong>Plano general:</strong> personaje + entorno.</li>
+            <li><strong>Plano lejano:</strong> entorno predominante.</li>
+            <li><strong>Gran plano:</strong> describe el lugar, personajes muy pequeños.</li>
+        </ul>
+    </div>
+
+    <div class="caja-complemento">
+        <span class="tag tag-complemento">Material complementario</span>
+        <strong>Ángulos de cámara (Lenguaje Audiovisual):</strong>
+        <ul>
+            <li><strong>Normal:</strong> a la altura de los ojos. Neutralidad.</li>
+            <li><strong>Picado:</strong> cámara por encima del sujeto (20-40 grados). Puede sugerir vulnerabilidad o dominio visual.</li>
+            <li><strong>Contrapicado:</strong> cámara por debajo del sujeto. Puede sugerir poder o grandeza.</li>
+        </ul>
+    </div>
+
+    <div class="caja-complemento">
+        <span class="tag tag-complemento">Material complementario</span>
+        <strong>Movimientos de cámara (Lenguaje Audiovisual):</strong>
+        <ul>
+            <li><strong>Panorámicas:</strong> giro de la cámara sobre su eje (horizontal, vertical o circular).</li>
+            <li><strong>Travellings:</strong> desplazamiento físico de la cámara (adelante, atrás, lateral, circular).</li>
+            <li><strong>Zooms:</strong> movimiento óptico que cambia la perspectiva y el plano.</li>
+            <li><strong>Grúas y drones:</strong> desplazamientos complejos en altura.</li>
+        </ul>
+    </div>
+
+    <h3>4.4 Piezas para redes sociales</h3>
+    <p>Formatos de narración visual del proceso y del producto final:</p>
+    <table>
+        <tr>
+            <th>Formato</th>
+            <th>Características</th>
+            <th>Uso</th>
+        </tr>
+        <tr>
+            <td><strong>Post</strong></td>
+            <td>Imagen estática, cuadrado o vertical</td>
+            <td>Presentación oficial del toy</td>
+        </tr>
+        <tr>
+            <td><strong>Story</strong></td>
+            <td>Vertical, 15 seg, efímero</td>
+            <td>Detrás de cámaras, proceso</td>
+        </tr>
+        <tr>
+            <td><strong>Carrusel</strong></td>
+            <td>Varias imágenes deslizables</td>
+            <td>Storytelling paso a paso</td>
+        </tr>
+        <tr>
+            <td><strong>Reel</strong></td>
+            <td>Video corto, vertical</td>
+            <td>Proceso creativo, unboxing</td>
+        </tr>
+    </table>
+
+    <h3>4.5 El toy como sistema de comunicación transmedia</h3>
+    <p>La pieza física circula en digital; el digital promociona lo físico. Esta relación bidireccional es la base de la <strong>comunicación transmedia</strong>: cada plataforma cuenta una parte de la historia.</p>
+
+    <div class="caja-complemento">
+        <span class="tag tag-complemento">Material complementario</span>
+        <strong>Narración y Estrategias Narrativas Audiovisuales (UNSAM, 2023):</strong>
+        <p><strong>Narrador:</strong></p>
+        <ul>
+            <li><strong>1ª persona (protagonista):</strong> cuenta desde su experiencia. Se conocen sus emociones y pensamientos.</li>
+            <li><strong>1ª persona (testigo):</strong> personaje secundario que observa. Muestra contexto pero no interviene.</li>
+            <li><strong>Monólogo interior:</strong> flujo de conciencia del personaje. Máxima subjetividad.</li>
+            <li><strong>2ª persona:</strong> interpela al espectador, lo hace sentir protagonista.</li>
+            <li><strong>3ª persona omnisciente:</strong> sabe todo, incluyendo pensamientos de los personajes.</li>
+            <li><strong>3ª persona limitada:</strong> solo sabe lo que percibe uno o varios personajes.</li>
+        </ul>
+        <p><strong>Argumento:</strong> introducción (presenta personajes, escenario, conflicto) → nudo/desarrollo (acciones y reacciones) → desenlace (resolución y consecuencias).</p>
+        <p><strong>Tiempo narrativo:</strong> lineal (orden cronológico), retrospectivo (flashback), prospectivo (flashforward).</p>
+        <p><strong>Espacio narrativo:</strong> físico (locación), social (contexto histórico-cultural), psicológico (ambiente emocional).</p>
+    </div>
+
+    <div class="caja-ok">
+        <strong>Aplicación al Art Toy:</strong> ¿Quién narra la historia de tu personaje? ¿Es un monólogo interior del toy? ¿Un testigo que lo descubrió? ¿Un narrador omnisciente que cuenta su origen? Definir el narrador cambia completamente el storytelling.
+    </div>
+</section>
+
+<section id="eje5">
+    <h2>🎯 EJE V — El Diseño como Proceso</h2>
+    <p><em>La metodología que sostiene la pieza</em></p>
+    <div class="caja-info">
+        <span class="tag tag-nuevo">Programa actual</span>
+        <strong>Conceptos clave:</strong> secuencia del proceso, brief, modelos de Munari, Frascara, González Ruiz, Bonsieppe, bitácora de proceso.
+    </div>
+
+    <h3>5.1 Secuencia del proceso de diseño</h3>
+    <table>
+        <tr>
+            <th>Etapa</th>
+            <th>Descripción</th>
+            <th>Producto esperado</th>
+        </tr>
+        <tr>
+            <td><strong>1. Origen</strong></td>
+            <td>Detección de la necesidad o problema</td>
+            <td>Detección del tema, primera idea</td>
+        </tr>
+        <tr>
+            <td><strong>2. Estudio preliminar</strong></td>
+            <td>Recolección de información y referentes</td>
+            <td>Moodboard, benchmark, investigación</td>
+        </tr>
+        <tr>
+            <td><strong>3. Procesamiento de la información</strong></td>
+            <td>Análisis y síntesis de lo recolectado</td>
+            <td>Mapa conceptual, insights</td>
+        </tr>
+        <tr>
+            <td><strong>4. Desarrollo de la estrategia</strong></td>
+            <td>Definición del camino a seguir</td>
+            <td>Brief, propuesta de concepto</td>
+        </tr>
+        <tr>
+            <td><strong>5. Visualización</strong></td>
+            <td>Materialización de la idea</td>
+            <td>Bocetos, maquetas, prototipos</td>
+        </tr>
+        <tr>
+            <td><strong>6. Evaluación</strong></td>
+            <td>Revisión crítica y ajustes</td>
+            <td>Correcciones, versión final</td>
+        </tr>
+    </table>
+
+    <div class="caja-viejo">
+        <span class="tag tag-viejo">Referencia 2021</span>
+        <strong>EJE VI del programa anterior (Prof. Quiroga):</strong> Métodos de diseño. El proceso de diseño: origen, estudio preliminar, procesamiento de la información, desarrollo de la estrategia, visualización, evaluación. Las etapas programáticas. Ideación visual y programa de diseño. El modelo de Bruno Munari. El modelo de Bonsieppe. El modelo de González Ruiz. El modelo de Frascara.
+    </div>
+
+    <h3>5.2 El brief del toy</h3>
+    <p>Documento que define:</p>
+    <ul>
+        <li><strong>Concepto:</strong> ¿qué es el personaje? ¿qué representa?</li>
+        <li><strong>Público objetivo:</strong> coleccionistas, público general, nicho específico.</li>
+        <li><strong>Materiales:</strong> masilla, cartón, pintura, etc.</li>
+        <li><strong>Escala:</strong> tamaño de la pieza en relación con el humano.</li>
+        <li><strong>Formatos de comunicación:</strong> packaging, redes, fotografía.</li>
+    </ul>
+
+    <h3>5.3 Modelos de proceso proyectual</h3>
+    <table>
+        <tr>
+            <th>Autor</th>
+            <th>Obra</th>
+            <th>Aporte clave</th>
+        </tr>
+        <tr>
+            <td><strong>Bruno Munari</strong></td>
+            <td>Cómo nacen los objetos</td>
+            <td>Observación y materialidad. El diseño nace de la observación atenta de la realidad y la experimentación con materiales.</td>
+        </tr>
+        <tr>
+            <td><strong>Jorge Frascara</strong></td>
+            <td>Diseño Gráfico y Comunicación</td>
+            <td>Percepción y comunicación. El diseño debe ser comprendido por el receptor. Claridad y eficacia comunicativa.</td>
+        </tr>
+        <tr>
+            <td><strong>Guillermo González Ruiz</strong></td>
+            <td>Estudio de Diseño</td>
+            <td>Gestión del estudio. Organización del trabajo profesional, relación con el cliente, administración del proyecto.</td>
+        </tr>
+        <tr>
+            <td><strong>Gui Bonsieppe</strong></td>
+            <td>Del objeto a la interfase digital</td>
+            <td>Pensar el diseño más allá del objeto físico, hacia sistemas y experiencias.</td>
+        </tr>
+    </table>
+
+    <h3>5.4 Bitácora de proceso</h3>
+    <p>Registro fotográfico y gráfico de cada etapa. Debe incluir:</p>
+    <ul>
+        <li>Bocetos iniciales y descartados</li>
+        <li>Errores y pruebas de material</li>
+        <li>Pruebas de color</li>
+        <li>Versiones descartadas (con explicación del porqué)</li>
+        <li>Evolución de la forma</li>
+        <li>Proceso de construcción paso a paso</li>
+        <li>Packaging: bocetos, prototipos, versiones</li>
+        <li>Fotografías de prueba</li>
+    </ul>
+
+    <div class="caja-ok">
+        <strong>Tip:</strong> La bitácora no es un álbum de fotos bonitas. Es un <em>documento de proceso</em> que demuestra cómo pensás, probás, errás y corregís. Incluí fechas y reflexiones escritas.
+    </div>
+</section>
+
+<section id="investigacion">
+    <h2>🔍 Investigación Digital y Análisis de Referentes</h2>
+
+    <div class="caja-complemento">
+        <span class="tag tag-complemento">Material complementario</span>
+        <strong>Etnografía Digital (Clase 14):</strong> Aunque proviene de otra disciplina, la etnografía digital ofrece herramientas valiosas para investigar la escena del designer toy en redes sociales.
+    </div>
+
+    <h3>¿Qué es la Etnografía Digital?</h3>
+    <p>No se limita a una plataforma (Facebook, TikTok, Instagram). No es solo cualitativa: combina métodos cualitativos y cuantitativos. No es antropología digital. Es un <strong>conjunto de aproximaciones con diversas técnicas</strong> para estudiar prácticas culturales en entornos digitales.</p>
+
+    <h3>Evolución histórica</h3>
+    <table>
+        <tr>
+            <th>Período</th>
+            <th>Características</th>
+            <th>Foco</th>
+        </tr>
+        <tr>
+            <td><strong>Etnografía Virtual (1988-2000)</strong></td>
+            <td>Tecnologías basadas en texto, anonimato</td>
+            <td>Comunicación, identidades, comunidades en el ciberespacio</td>
+        </tr>
+        <tr>
+            <td><strong>Web 2.0 y Plataformas (2000+)</strong></td>
+            <td>Prácticas dentro y fuera de la pantalla</td>
+            <td>Rutinas, vida cotidiana, métodos multi-situados</td>
+        </tr>
+        <tr>
+            <td><strong>Era Algorítmica (2007+)</strong></td>
+            <td>Lo digital imbricado en procesos económicos, políticos, sociales</td>
+            <td>Agencia, poder, normatividad, capitalismo de vigilancia</td>
+        </tr>
+    </table>
+
+    <h3>Lo digital como objeto, campo o método</h3>
+    <ul>
+        <li><strong>Como objeto:</strong> tecnologías digitales como pregunta central (ej. ¿cómo funciona la difusión de Art Toys en Instagram?).</li>
+        <li><strong>Como campo:</strong> plataformas digitales como lugar de recolección de datos (ej. analizar cuentas de toymakers argentinos).</li>
+        <li><strong>Como método:</strong> uso de herramientas digitales para recolección, análisis y presentación (ej. análisis de hashtags, software de análisis).</li>
+    </ul>
+
+    <h3>Principios de la Etnografía Digital aplicados a la investigación de referentes</h3>
+    <ul>
+        <li><strong>Multiplicidad:</strong> no centrarse solo en una plataforma. Cruzar Instagram, YouTube, Behance, etc.</li>
+        <li><strong>Apertura:</strong> flexibilidad en el método. Dejar que la investigación guíe hacia nuevos referentes.</li>
+        <li><strong>Reflexividad:</strong> reflexión crítica del investigador sobre sus propios sesgos y herramientas.</li>
+        <li><strong>No ortodoxia:</strong> innovación en métodos. No hay una única forma correcta de investigar.</li>
+    </ul>
+
+    <h3>Desafíos y reflexiones</h3>
+    <ul>
+        <li><strong>Transformación, no invención:</strong> adapta metodologías etnográficas tradicionales a lo digital.</li>
+        <li><strong>Cultura compleja:</strong> lo digital es un laberinto multidimensional.</li>
+        <li><strong>Etnografía crítica y activista:</strong> enfocada en justicia social y los márgenes.</li>
+        <li><strong>Ética compartida y situada:</strong> necesaria para la investigación en plataformas.</li>
+        <li><strong>Datos complejos:</strong> construidos por actores humanos y no humanos (bots, algoritmos).</li>
+        <li><strong>Sesgos algorítmicos:</strong> Google y la construcción del conocimiento. Los algoritmos filtran lo que vemos.</li>
+        <li><strong>Materialidad de lo digital:</strong> internet como transmisión de datos, plataformas con modelos de negocio que influyen en el contenido.</li>
+        <li><strong>Prosumerismo:</strong> audiencias como productores-consumidores (David Gauntlett).</li>
+        <li><strong>Fandom:</strong> comunidades participativas y resistencia cultural potenciadas por lo digital.</li>
+    </ul>
+
+    <div class="caja-ok">
+        <strong>Aplicación práctica:</strong> Cuando investigues referentes en Instagram, no solo mires las fotos. Analizá: ¿qué hashtags usan? ¿cómo interactúan con su comunidad? ¿qué frecuencia de posteo tienen? ¿cómo narran su proceso? Esto es etnografía digital aplicada al designer toy.
+    </div>
+</section>
+
+<section id="evaluacion">
+    <h2>📝 Sistema de Evaluación</h2>
+
+    <h3>Criterios de Evaluación</h3>
+    <ol>
+        <li>Comprensión de los contenidos teóricos de morfología, diseño 3D y proceso proyectual.</li>
+        <li>Capacidad de análisis y selección de referentes pertinentes al universo del Art Toy.</li>
+        <li>Habilidades y destrezas en el manejo de materiales y técnicas de construcción.</li>
+        <li>Actitud en la elaboración de los trabajos solicitados.</li>
+        <li>Habilidad para interpretar información técnica en 2D (boceto, plano, packaging) y trasladarla al campo 3D (pieza física).</li>
+        <li>Actitud al momento de resolver problemas formales y comunicacionales.</li>
+    </ol>
+
+    <h3>Instrumentos y Calendario Aproximado</h3>
+    <table>
+        <tr>
+            <th>Instancia</th>
+            <th>Tipo</th>
+            <th>Descripción</th>
+        </tr>
+        <tr>
+            <td><strong>TP N° 1</strong></td>
+            <td>Trabajo Práctico</td>
+            <td>Morfología y bocetos: familia de variaciones formales del personaje a partir de un módulo base. Storyboard de poses/actitudes.</td>
+        </tr>
+        <tr>
+            <td><strong>1° Parcial</strong></td>
+            <td>Evaluación escrita</td>
+            <td>Teórico-práctica: análisis de morfología de un toy referente + resolución de situación de diseño 3D.</td>
+        </tr>
+        <tr>
+            <td><strong>TP N° 2</strong></td>
+            <td>Trabajo Práctico</td>
+            <td>Maqueta / Prototipo del Art Toy: pieza tridimensional materializada con masilla, cartón y pintura.</td>
+        </tr>
+        <tr>
+            <td><strong>TP N° 3</strong></td>
+            <td>Trabajo Práctico</td>
+            <td>Packaging / Blister / Envoltorio: diseño y armado del contenedor gráfico de la pieza.</td>
+        </tr>
+        <tr>
+            <td><strong>2° Parcial</strong></td>
+            <td>Evaluación proyectual</td>
+            <td>Presentación y defensa del avance del proyecto integrador (pieza + packaging + narrativa).</td>
+        </tr>
+        <tr>
+            <td><strong>TP Integrador</strong></td>
+            <td>Trabajo Final</td>
+            <td>Art Toy + Sistema de comunicación: pieza final, packaging terminado, fotografía de producto y piezas para redes (post/story/reel) con storytelling del personaje.</td>
+        </tr>
+    </table>
+
+    <div class="caja-viejo">
+        <span class="tag tag-viejo">Referencia 2021</span>
+        <strong>Instrumentos del programa anterior (Prof. Quiroga):</strong> Trabajo Práctico: Maqueta. Evaluación I Parcial: Múltiple choice. Trabajo Práctico: Packaging. Evaluación II Parcial: Múltiple Choice. Trabajo práctico Integrador: Libro didáctico o elaboración de un catálogo virtual. La evolución hacia el Art Toy mantiene la estructura de TPs y parciales, pero orienta los productos hacia la pieza de designer toy y su sistema de comunicación.
+    </div>
+
+    <h3>Condiciones de Regularización y Promoción</h3>
+    <div class="caja-acento">
+        <strong>REGULARIZAR:</strong> 70% de asistencia; 80% de trabajos prácticos aprobados; 2 parciales aprobados con nota mínima 6 (seis).
+    </div>
+    <div class="caja-ok">
+        <strong>PROMOCIONAR</strong> (solo para materias taller): 80% de asistencia; 100% de prácticos aprobados; 2 parciales aprobados con nota mínima 7 (siete).
+    </div>
+    <div class="caja-importante">
+        <strong>LIBRE:</strong> Aplicable según reglamento. No se exigen monografías; sí un trabajo integrador teórico-práctico. El alumno debe inscribirse en mesa final, preparar el programa completo, rendir un escrito y, si aprueba (nota mínima 4), una instancia oral.
+    </div>
+</section>
+
+<section id="recursos">
+    <h2>🧰 Recursos Didácticos y Materiales</h2>
+
+    <h3>Materiales de Construcción</h3>
+    <ul>
+        <li>Masilla epoxy (El Artesano, Poxilina)</li>
+        <li>Cartón gris 1mm</li>
+        <li>Cartulinas</li>
+        <li>Tijeras, cutter, lijas, pegamento</li>
+    </ul>
+
+    <h3>Pintura y Terminación</h3>
+    <ul>
+        <li>Marcadores acrílicos (Posca, Alba)</li>
+        <li>Pinturas acrílicas (Eterna)</li>
+        <li>Aerosoles (Montana MTN, Rustoleum)</li>
+        <li>Boquillas de repuesto</li>
+    </ul>
+
+    <h3>Herramientas</h3>
+    <ul>
+        <li>Sacabocados para bordes redondeados</li>
+        <li>Perforadoras para blister</li>
+        <li>Reglas, compases</li>
+    </ul>
+
+    <h3>Packaging</h3>
+    <ul>
+        <li>Blisters de acetato (referencia: Lucmar Plast, Haedo — 011-5157-6377. Mínimo 100 unidades)</li>
+        <li>Formatos disponibles: 8,5×4×2,7cm de profundidad / 11,6×6×2,8cm de profundidad</li>
+        <li>Cartón montado</li>
+        <li>Impresión institucional</li>
+    </ul>
+
+    <h3>Registro</h3>
+    <ul>
+        <li>Cámaras de celular</li>
+        <li>Iluminación natural</li>
+        <li>Fondos caseros para fotografía de producto</li>
+    </ul>
+
+    <div class="caja-info">
+        <strong>¿Dónde conseguir materiales? (Info útil):</strong>
+        <ul>
+            <li><strong>Blisters:</strong> Lucmar Plast, Haedo. Tel: 011-5157-6377. Mínimo 100u.</li>
+            <li><strong>Sacabocados redondeador:</strong> similar a <a href="https://articulo.mercadolibre.com.ar/MLA-782709167-redondeadora-3-en-1-perfora-sacabocado-redondeadora-bordes-_JM">este modelo en MercadoLibre</a>.</li>
+            <li><strong>Perforadora para blister:</strong> <a href="https://articulo.mercadolibre.com.ar/MLA-728160358-perforadora-para-blister-rafer-con-base-y-guia-de-papel-_JM">modelo Rafer en MercadoLibre</a>.</li>
+            <li><strong>Masilla epoxy:</strong> El Artesano, Poxilina. También plasticera (no probada).</li>
+            <li><strong>Marcadores acrílicos:</strong> Posca (mejor variedad de colores/tamaños). Alba (más baratos, recargables, pero difíciles de conseguir).</li>
+            <li><strong>Pintura acrílica:</strong> Eterna (si prefieren pinceles).</li>
+            <li><strong>Aerosoles:</strong> Montana MTN y Rustoleum (los mejores, pero caros). Sinteplast y otras marcas son más baratas pero se tapan más. Boquillas sueltas en Córdoba y Salguero (CABA). Chequear precios en MercadoLibre y pinturerías.</li>
+            <li><strong>Cartón:</strong> Gris de 1mm de espesor. También cartón montado para acabado más prolijo.</li>
+        </ul>
+    </div>
+
+    <div class="caja-ok">
+        <strong>Tip de aerosoles:</strong> Buscá en YouTube cómo limpiarlos cuando se tapan. Guardalos boca abajo después de usar. Montana MTN usa la misma boquilla que Sinteplast.
+    </div>
+</section>
+
+<section id="referentes">
+    <h2>🎨 Referentes de la Escena</h2>
+
+    <h3>Clásicos / Internacionales</h3>
+    <div class="referente-card"><strong>Para buscar en Instagram:</strong> <a href="https://www.instagram.com/sucklord/" target="_blank">@sucklord</a> — Referente histórico de la escena designer toy.</div>
+    <div class="referente-card"><strong>Para buscar en Instagram:</strong> <a href="https://www.instagram.com/killerbootlegs/" target="_blank">@killerbootlegs</a> — Bootlegs artísticos y reinterpretaciones.</div>
+    <div class="referente-card"><strong>Para buscar en Instagram:</strong> <a href="https://www.instagram.com/healymade/" target="_blank">@healymade</a> — Figuras de autor con fuerte identidad visual.</div>
+    <div class="referente-card"><strong>Para buscar en Instagram:</strong> <a href="https://www.instagram.com/ryca/" target="_blank">@ryca</a> — Estética pop y cultura visual.</div>
+    <div class="referente-card"><strong>Para buscar en Instagram:</strong> <a href="https://www.instagram.com/pendragon/" target="_blank">@pendragon</a> — Figuras de fantasía y personajes.</div>
+    <div class="referente-card"><strong>Para buscar en Instagram:</strong> <a href="https://www.instagram.com/dollarslice/" target="_blank">@dollarslice</a> — Estética urbana y accesible.</div>
+    <div class="referente-card"><strong>Para buscar en Instagram:</strong> <a href="https://www.instagram.com/dketoys/" target="_blank">@dketoys</a> — No hace figuras, pero Dov Kelemer es un recontra-referente de la escena.</div>
+
+    <h3>Colegas Argentinos</h3>
+    <div class="referente-card"><strong>Para buscar en Instagram:</strong> <a href="https://www.instagram.com/bombermat/" target="_blank">@bombermat</a></div>
+    <div class="referente-card"><strong>Para buscar en Instagram:</strong> <a href="https://www.instagram.com/camote.toys/" target="_blank">@camote.toys</a></div>
+    <div class="referente-card"><strong>Para buscar en Instagram:</strong> <a href="https://www.instagram.com/facker.toy/" target="_blank">@facker.toy</a></div>
+    <div class="referente-card"><strong>Para buscar en Instagram:</strong> <a href="https://www.instagram.com/i6ni/" target="_blank">@i6ni</a></div>
+    <div class="referente-card"><strong>Para buscar en Instagram:</strong> <a href="https://www.instagram.com/jpcustomtoys/" target="_blank">@jpcustomtoys</a></div>
+    <div class="referente-card"><strong>Para buscar en Instagram:</strong> <a href="https://www.instagram.com/kalakatoys/" target="_blank">@kalakatoys</a></div>
+    <div class="referente-card"><strong>Para buscar en Instagram:</strong> <a href="https://www.instagram.com/kohantoys/" target="_blank">@kohantoys</a></div>
+    <div class="referente-card"><strong>Para buscar en Instagram:</strong> <a href="https://www.instagram.com/kosmotoys/" target="_blank">@kosmotoys</a></div>
+    <div class="referente-card"><strong>Para buscar en Instagram:</strong> <a href="https://www.instagram.com/kuatotoys/" target="_blank">@kuatotoys</a></div>
+    <div class="referente-card"><strong>Para buscar en Instagram:</strong> <a href="https://www.instagram.com/legiontoys/" target="_blank">@legiontoys</a></div>
+    <div class="referente-card"><strong>Para buscar en Instagram:</strong> <a href="https://www.instagram.com/leyendasdelapatagonia/" target="_blank">@leyendasdelapatagonia</a></div>
+    <div class="referente-card"><strong>Para buscar en Instagram:</strong> <a href="https://www.instagram.com/marceland/" target="_blank">@marceland</a></div>
+    <div class="referente-card"><strong>Para buscar en Instagram:</strong> <a href="https://www.instagram.com/mediodescocido/" target="_blank">@mediodescocido</a></div>
+    <div class="referente-card"><strong>Para buscar en Instagram:</strong> <a href="https://www.instagram.com/milongatoys/" target="_blank">@milongatoys</a></div>
+    <div class="referente-card"><strong>Para buscar en Instagram:</strong> <a href="https://www.instagram.com/melimasilla/" target="_blank">@melimasilla</a></div>
+    <div class="referente-card"><strong>Para buscar en Instagram:</strong> <a href="https://www.instagram.com/multiversitytoys/" target="_blank">@multiversitytoys</a></div>
+    <div class="referente-card"><strong>Para buscar en Instagram:</strong> <a href="https://www.instagram.com/poguitoys/" target="_blank">@poguitoys</a></div>
+    <div class="referente-card"><strong>Para buscar en Instagram:</strong> <a href="https://www.instagram.com/punkandpop/" target="_blank">@punkandpop</a></div>
+    <div class="referente-card"><strong>Para buscar en Instagram:</strong> <a href="https://www.instagram.com/rottentotem/" target="_blank">@rottentotem</a></div>
+    <div class="referente-card"><strong>Para buscar en Instagram:</strong> <a href="https://www.instagram.com/terror.st/" target="_blank">@terror.st</a></div>
+    <div class="referente-card"><strong>Para buscar en Instagram:</strong> <a href="https://www.instagram.com/truchotoys/" target="_blank">@truchotoys</a></div>
+    <div class="referente-card"><strong>Para buscar en Instagram:</strong> <a href="https://www.instagram.com/rustydeimos/" target="_blank">@rustydeimos</a></div>
+
+    <h3>Otras cuentas interesantes / distintas</h3>
+    <div class="referente-card"><strong>Para buscar en Instagram:</strong> <a href="https://www.instagram.com/basedgore/" target="_blank">@basedgore</a></div>
+    <div class="referente-card"><strong>Para buscar en Instagram:</strong> <a href="https://www.instagram.com/carlosramirez/" target="_blank">@carlosramirez</a></div>
+    <div class="referente-card"><strong>Para buscar en Instagram:</strong> <a href="https://www.instagram.com/danobrown/" target="_blank">@danobrown</a></div>
+    <div class="referente-card"><strong>Para buscar en Instagram:</strong> <a href="https://www.instagram.com/dziadostwo/" target="_blank">@dziadostwo</a></div>
+    <div class="referente-card"><strong>Para buscar en Instagram:</strong> <a href="https://www.instagram.com/edwinsalas/" target="_blank">@edwinsalas</a></div>
+    <div class="referente-card"><strong>Para buscar en Instagram:</strong> <a href="https://www.instagram.com/ghoulofgabba/" target="_blank">@ghoulofgabba</a></div>
+    <div class="referente-card"><strong>Para buscar en Instagram:</strong> <a href="https://www.instagram.com/greenplastictunnels/" target="_blank">@greenplastictunnels</a></div>
+    <div class="referente-card"><strong>Para buscar en Instagram:</strong> <a href="https://www.instagram.com/inhero/" target="_blank">@inhero</a></div>
+    <div class="referente-card"><strong>Para buscar en Instagram:</strong> <a href="https://www.instagram.com/larbie/" target="_blank">@larbie</a></div>
+    <div class="referente-card"><strong>Para buscar en Instagram:</strong> <a href="https://www.instagram.com/magoob/" target="_blank">@magoob</a></div>
+    <div class="referente-card"><strong>Para buscar en Instagram:</strong> <a href="https://www.instagram.com/nekosatzu/" target="_blank">@nekosatzu</a></div>
+    <div class="referente-card"><strong>Para buscar en Instagram:</strong> <a href="https://www.instagram.com/obviousplant/" target="_blank">@obviousplant</a></div>
+    <div class="referente-card"><strong>Para buscar en Instagram:</strong> <a href="https://www.instagram.com/plasticcheez/" target="_blank">@plasticcheez</a></div>
+    <div class="referente-card"><strong>Para buscar en Instagram:</strong> <a href="https://www.instagram.com/sixfootturkeytoys/" target="_blank">@sixfootturkeytoys</a></div>
+    <div class="referente-card"><strong>Para buscar en Instagram:</strong> <a href="https://www.instagram.com/toysontap/" target="_blank">@toysontap</a> — Podcast/entrevistas</div>
+    <div class="referente-card"><strong>Para buscar en Instagram:</strong> <a href="https://www.instagram.com/recollectiontoys/" target="_blank">@recollectiontoys</a></div>
+
+    <h3>Documental recomendado</h3>
+    <div class="caja-ok">
+        <strong>Master Casters</strong> (24 min) — Documental sobre la escena estadounidense de toymakers. Disponible en Google Drive (compartido por Point and Click Store).
+    </div>
+
+    <div class="caja-importante">
+        <strong>Actividad de benchmark:</strong> Seguí al menos 5 cuentas de esta lista. Analizá su morfología (cómo construyen sus figuras), packaging (cómo presentan sus piezas) y narrativa (cómo cuentan la historia de sus personajes). Documentá tus hallazgos en la bitácora.
+    </div>
+</section>
+
+<section id="preguntas">
+    <h2>❓ Preguntas de Estudio para Parciales</h2>
+
+    <h3>EJE I — Morfología</h3>
+    <div class="pregunta">1. ¿Qué es un módulo y cómo funciona como "semilla formal" en la creación de un Art Toy?</div>
+    <div class="pregunta">2. Explicá con ejemplos qué son las variaciones posicionales (rotación, traslación, escala) y cómo afectan la actitud de un personaje.</div>
+    <div class="pregunta">3. ¿Qué diferencia hay entre submódulos y supermódulos? Dá un ejemplo aplicado a un cuerpo de toy.</div>
+    <div class="pregunta">4. Describí las tres estructuras de construcción (lineales, planos seriados, de pared) y mencioná en qué parte de un toy podrían aplicarse.</div>
+    <div class="pregunta">5. ¿Cómo se relacionan los conceptos de "células espaciales" (programa 2021) con la construcción modular del Art Toy?</div>
+
+    <h3>EJE II — Diseño 3D</h3>
+    <div class="pregunta">6. Definí vértice, arista y cara. ¿Cómo se relacionan estos elementos en la construcción de un volumen?</div>
+    <div class="pregunta">7. ¿Qué desafíos presenta la traducción de una silueta 2D a un objeto 3D? Nombrá al menos tres.</div>
+    <div class="pregunta">8. ¿Qué materiales se proponen para la construcción del toy y qué técnicas de terminación se recomiendan?</div>
+    <div class="pregunta">9. ¿Por qué se dice que el Art Toy es una "pieza de comunicación" y no solo un objeto decorativo?</div>
+    <div class="pregunta">10. ¿Cuál es la diferencia entre los ejes X, Y, Z y cómo se relacionan con el diseño 2D y 3D?</div>
+
+    <h3>EJE III — Packaging</h3>
+    <div class="pregunta">11. ¿Qué significa que el packaging sea una "extensión del personaje"? Explicá la relación contenido-contenedor.</div>
+    <div class="pregunta">12. ¿Qué es la "quinta fachada" y qué información debe contener?</div>
+    <div class="pregunta">13. Analizá las semejanzas y contrastes entre el toy y su soporte de exhibición.</div>
+    <div class="pregunta">14. ¿Cómo se traduce el concepto de "maqueta" (programa 2021) al packaging del Art Toy?</div>
+    <div class="pregunta">15. ¿Qué tipos de blister se mencionan y cuáles son sus dimensiones aproximadas?</div>
+
+    <h3>EJE IV — Narrativa Visual</h3>
+    <div class="pregunta">16. ¿Qué elementos componen el storytelling de un Art Toy? Desarrollá cada uno.</div>
+    <div class="pregunta">17. ¿Qué es la comunicación transmedia aplicada al toy? Explicá cómo se relacionan lo físico y lo digital.</div>
+    <div class="pregunta">18. ¿Qué aspectos técnicos deben considerarse en la fotografía de producto de un Art Toy?</div>
+    <div class="pregunta">19. Aplicá la escala de planos del lenguaje audiovisual a la fotografía de tu Art Toy. ¿Qué planos usarías y para qué?</div>
+    <div class="pregunta">20. ¿Cómo influye el ángulo de cámara (normal, picado, contrapicado) en la percepción del personaje?</div>
+    <div class="pregunta">21. Definí los tipos de narrador (1ª, 2ª, 3ª persona) y proponé cuál usarías para contar la historia de tu toy.</div>
+    <div class="pregunta">22. ¿Cómo se estructura un argumento (introducción, nudo, desenlace) en el contexto de un spot o reel de Art Toy?</div>
+
+    <h3>EJE V — Proceso de Diseño</h3>
+    <div class="pregunta">23. Enumerá y describí las seis etapas del proceso de diseño según el programa.</div>
+    <div class="pregunta">24. ¿Qué elementos debe contener un brief de Art Toy?</div>
+    <div class="pregunta">25. Compará los aportes de Munari, Frascara, González Ruiz y Bonsieppe al proceso proyectual.</div>
+    <div class="pregunta">26. ¿Qué función cumple la bitácora de proceso y qué debe registrar?</div>
+
+    <h3>Investigación Digital</h3>
+    <div class="pregunta">27. ¿Qué es la etnografía digital y cómo puede aplicarse al estudio de la escena del designer toy?</div>
+    <div class="pregunta">28. Explicá el concepto de "prosumerismo" y su relación con las comunidades de Art Toy en redes sociales.</div>
+
+    <h3>Preguntas Integradoras</h3>
+    <div class="pregunta">29. Diseñá un Art Toy conceptual: definí su módulo base, su packaging ideal, su historia en 5 líneas y su público objetivo.</div>
+    <div class="pregunta">30. Analizá un toy referente (local o internacional) desde los cinco ejes del programa.</div>
+</section>
+
+<section id="glosario">
+    <h2>📖 Glosario de Términos</h2>
+
+    <p><span class="termino">Art Toy / Designer Toy:</span> Figura tridimensional diseñada como pieza de comunicación, coleccionable y expresión personal. No es un juguete de producción masiva; es una pieza de autor.</p>
+
+    <p><span class="termino">Módulo:</span> Unidad básica de forma que se repite, varía y combina para generar estructuras más complejas. Es la "semilla formal" del personaje.</p>
+
+    <p><span class="termino">Submódulo:</span> Unidad parcial del cuerpo del toy (cabeza, torso, extremidad) que funciona como módulo dentro de un sistema mayor.</p>
+
+    <p><span class="termino">Supermódulo:</span> Conjunto de submódulos combinados que forman una unidad estructural completa (cuerpo completo del personaje).</p>
+
+    <p><span class="termino">Variaciones posicionales:</span> Transformaciones geométricas aplicadas a un módulo: rotación (girar), traslación (mover) y escala (agrandar o achicar).</p>
+
+    <p><span class="termino">Estructura lineal:</span> Organización de módulos a lo largo de un eje, como una columna vertebral o extremidades.</p>
+
+    <p><span class="termino">Planos seriados:</span> Secuencia de planos paralelos o sucesivos que construyen volumen por acumulación.</p>
+
+    <p><span class="termino">Estructura de pared:</span> Construcción de volumen a partir de superficies que encierran un espacio.</p>
+
+    <p><span class="termino">Células espaciales:</span> Unidades mínimas de espacio que, al combinarse, generan estructuras más complejas (concepto del programa 2021).</p>
+
+    <p><span class="termino">Vértice:</span> Punto de encuentro de dos o más aristas en una forma tridimensional.</p>
+
+    <p><span class="termino">Arista:</span> Línea donde se encuentran dos caras de un volumen.</p>
+
+    <p><span class="termino">Cara:</span> Superficie plana que delimita un volumen poliédrico.</p>
+
+    <p><span class="termino">Desarrollo de patrones:</span> Representación plana (2D) de las superficies de un objeto 3D, lista para cortar, doblar y ensamblar.</p>
+
+    <p><span class="termino">Blister:</span> Tipo de packaging que consiste en una base de cartón o cartulina cubierta por una lámina de acetato o plástico transparente.</p>
+
+    <p><span class="termino">Quinta fachada:</span> Dorso del packaging, considerado como una superficie más de diseño e información, no como un espacio secundario.</p>
+
+    <p><span class="termino">Storytelling:</span> Narrativa que rodea al objeto: su nombre, origen, personalidad y universo. Transforma al toy en un personaje con identidad.</p>
+
+    <p><span class="termino">Mythos:</span> Conjunto de creencias, historias y valores que conforman el universo narrativo del personaje.</p>
+
+    <p><span class="termino">Brief:</span> Documento que define el concepto, público objetivo, materiales y escala de un proyecto de diseño.</p>
+
+    <p><span class="termino">Bitácora de proceso:</span> Registro ordenado (fotográfico y gráfico) de todas las etapas del proyecto, incluyendo errores y versiones descartadas.</p>
+
+    <p><span class="termino">Comunicación transmedia:</span> Estrategia donde una historia o producto se desarrolla a través de múltiples plataformas (física y digital) que se complementan.</p>
+
+    <p><span class="termino">Benchmark:</span> Análisis comparativo de referentes para establecer estándares de calidad e inspiración.</p>
+
+    <p><span class="termino">Masilla epoxy:</span> Material de modelado de dos componentes (resina + endurecedor) que endurece al secarse. Ejemplos: El Artesano, Poxilina.</p>
+
+    <p><span class="termino">Cartón gris:</span> Cartón de alta densidad, de aproximadamente 1mm de espesor, utilizado para estructuras, prototipos y packaging.</p>
+
+    <p><span class="termino">Etnografía digital:</span> Conjunto de aproximaciones con diversas técnicas para estudiar prácticas culturales en entornos digitales.</p>
+
+    <p><span class="termino">Prosumerismo:</span> Audiencias como productores-consumidores, conectadas a audiencias activas (David Gauntlett).</p>
+
+    <p><span class="termino">Fandom:</span> Comunidades participativas y resistencia cultural potenciadas por lo digital.</p>
+
+    <p><span class="termino">Plano detalle:</span> Encuadre de una parte muy restringida del cuerpo u objeto. Concentración máxima de atención.</p>
+
+    <p><span class="termino">Contrapicado:</span> Cámara ubicada por debajo del sujeto. Puede sugerir poder, grandeza o heroicidad.</p>
+
+    <p><span class="termino">Picado:</span> Cámara ubicada por encima del sujeto (20-40 grados). Puede sugerir vulnerabilidad o dominio visual.</p>
+
+    <p><span class="termino">Travelling:</span> Movimiento donde la cámara se desplaza físicamente de un punto a otro.</p>
+
+    <p><span class="termino">Panorámica:</span> Giro de la cámara sobre su propio eje (horizontal, vertical o circular).</p>
+</section>
+
+<section id="bibliografia">
+    <h2>📚 Bibliografía y Referentes</h2>
+
+    <h3>Obras de Referencia Obligatorias</h3>
+    <table>
+        <tr>
+            <th>Autor</th>
+            <th>Obra</th>
+            <th>Aporte clave al programa</th>
+        </tr>
+        <tr>
+            <td><strong>González Ruiz, Guillermo</strong></td>
+            <td>Estudio de Diseño</td>
+            <td>Gestión del estudio de diseño. Organización del trabajo profesional.</td>
+        </tr>
+        <tr>
+            <td><strong>Frascara, Jorge</strong></td>
+            <td>Diseño Gráfico y Comunicación</td>
+            <td>Percepción visual y comunicación efectiva. Cómo el diseño transmite mensajes.</td>
+        </tr>
+        <tr>
+            <td><strong>Munari, Bruno</strong></td>
+            <td>Cómo nacen los objetos</td>
+            <td>Observación, materialidad y proceso creativo. Metodología de diseño desde la práctica.</td>
+        </tr>
+        <tr>
+            <td><strong>Scott, William</strong></td>
+            <td>Fundamentos del Diseño</td>
+            <td>Principios formales aplicables a la morfología y composición.</td>
+        </tr>
+        <tr>
+            <td><strong>Spina, Mario</strong></td>
+            <td>Emprender en el Diseño</td>
+            <td>Visión profesional y emprendedora del diseñador.</td>
+        </tr>
+    </table>
+
+    <h3>Material Complementario</h3>
+    <ul>
+        <li><strong>Lenguaje Audiovisual</strong> — UNSAM, Escuela de Humanidades, Licenciatura en Comunicación Audiovisual (a distancia), Suficiencia Técnica 2023.</li>
+        <li><strong>Narración y Estrategias Narrativas Audiovisuales</strong> — UNSAM, Escuela de Humanidades, Licenciatura en Comunicación Audiovisual (a distancia), Suficiencia Técnica 2023.</li>
+        <li><strong>Etnografía Digital</strong> — Clase 14, cuadro sinóptico (Edgar Gómez y referentes: Christine Hine).</li>
+    </ul>
+
+    <h3>Referentes de la Escena (Material de Análisis)</h3>
+    <ul>
+        <li><strong>Documental:</strong> Master Casters (escena estadounidense de toymakers, 24 min).</li>
+        <li><strong>Cuentas de Instagram:</strong> toymakers argentinos e internacionales (ver sección Referentes).</li>
+        <li><strong>Videos de proceso:</strong> disponibles en YouTube (técnicas de modelado, pintura, packaging).</li>
+    </ul>
+</section>
+
+<section id="cronograma">
+    <h2>📅 Cronograma Sugerido de Estudio</h2>
+    <p>Guía orientativa para organizar el trabajo a lo largo del año lectivo. Ajustá según el calendario real de la cátedra.</p>
+
+    <table>
+        <tr>
+            <th>Período</th>
+            <th>Contenido</th>
+            <th>Actividades clave</th>
+        </tr>
+        <tr>
+            <td><strong>Marzo — Abril</strong></td>
+            <td>EJE I: Morfología<br>EJE V: Proceso (brief, bitácora)</td>
+            <td>Investigación de referentes. Desarrollo del módulo base. Familia de variaciones. Storyboard de poses. Elaboración del brief.</td>
+        </tr>
+        <tr>
+            <td><strong>Mayo</strong></td>
+            <td>Repaso Ejes I y V<br>Preparación 1° Parcial</td>
+            <td>Revisión de bocetos. Análisis de morfología de un referente. Estudio teórico de Munari y Frascara.</td>
+        </tr>
+        <tr>
+            <td><strong>Junio</strong></td>
+            <td><strong>1° Parcial</strong><br>EJE II: Diseño 3D y Volumen</td>
+            <td>Desarrollo de patrones. Maqueta / prototipo del toy. Pruebas de materialidad. Bitácora actualizada.</td>
+        </tr>
+        <tr>
+            <td><strong>Julio</strong></td>
+            <td>Receso invernal<br>Avance del prototipo</td>
+            <td>Aprovechá para lijar, pintar y terminar la pieza. Fotografiar el proceso.</td>
+        </tr>
+        <tr>
+            <td><strong>Agosto — Septiembre</strong></td>
+            <td>EJE III: Packaging<br>EJE IV: Narrativa visual</td>
+            <td>Diseño y armado del packaging. Desarrollo del storytelling. Sistema gráfico del personaje. Fotografía de producto.</td>
+        </tr>
+        <tr>
+            <td><strong>Octubre</strong></td>
+            <td><strong>2° Parcial</strong><br>Avance del TP Integrador</td>
+            <td>Presentación y defensa del proyecto integrador. Piezas para redes sociales.</td>
+        </tr>
+        <tr>
+            <td><strong>Noviembre</strong></td>
+            <td><strong>TP Integrador Final</strong></td>
+            <td>Entrega final: pieza terminada + packaging + fotografía + piezas para redes + bitácora completa.</td>
+        </tr>
+    </table>
+
+    <div class="caja-ok">
+        <strong>Checklist de entrega final:</strong>
+        <ul class="checklist">
+            <li>Art Toy materializado y terminado</li>
+            <li>Packaging / blister / envoltorio armado</li>
+            <li>Fotografía de producto (mínimo 5 fotos)</li>
+            <li>Piezas para redes: post, story, reel</li>
+            <li>Storytelling del personaje (texto + imagen)</li>
+            <li>Bitácora de proceso completa</li>
+            <li>Brief del proyecto</li>
+            <li>Análisis de referentes (benchmark)</li>
+        </ul>
+    </div>
+</section>
+
+<section id="metodologia">
+    <h2>🛠️ Metodología de la Cátedra</h2>
+    <p>La cátedra se desarrolla en formato <strong>híbrido</strong> (presencial + virtual). Los materiales teóricos, calendarios y entregas se comparten por los medios digitales que disponga la institución o el docente.</p>
+
+    <table>
+        <tr>
+            <th>Estrategia</th>
+            <th>Descripción</th>
+        </tr>
+        <tr>
+            <td><strong>Clases teóricas</strong></td>
+            <td>Exposiciones con análisis de referentes (toymakers locales e internacionales), videos de proceso y lecturas guiadas.</td>
+        </tr>
+        <tr>
+            <td><strong>Talleres de proyecto</strong></td>
+            <td>Desarrollo guiado del Art Toy en aula, con revisiones individuales y colectivas (critique).</td>
+        </tr>
+        <tr>
+            <td><strong>Aula invertida</strong></td>
+            <td>Material de referentes y técnicas previo a clase para optimizar el tiempo presencial en la producción.</td>
+        </tr>
+        <tr>
+            <td><strong>Bitácora de proceso</strong></td>
+            <td>Cada estudiante mantiene un registro fotográfico y gráfico del desarrollo de su toy.</td>
+        </tr>
+        <tr>
+            <td><strong>Vinculación con referentes</strong></td>
+            <td>Análisis de cuentas de Instagram de toymakers argentinos e internacionales como material de estudio y benchmark.</td>
+        </tr>
+    </table>
+
+    <div class="caja-viejo">
+        <span class="tag tag-viejo">Referencia 2021</span>
+        <strong>Metodología anterior (Prof. Quiroga):</strong> Plataforma virtual Classroom, con archivos en Power Point, enlaces a videos en YouTube, etc. Modalidad virtual con demostraciones en clase de las metodologías para el armado 3D.
+    </div>
+
+    <div class="caja-ok">
+        <strong>Tip para el estudiante:</strong> Mantené tu bitácora actualizada semana a semana. No dejes todo para el final. Una buena bitácora demuestra proceso, evolución y compromiso.
+    </div>
+</section>
+
+<section id="competencias">
+    <h2>💪 Competencias y Valores</h2>
+
+    <h3>Competencias Procedimentales (Capacidades a Lograr)</h3>
+    <ul>
+        <li>Diseñar la morfología de un objeto tridimensional a partir de principios modulares y variaciones formales.</li>
+        <li>Materializar una pieza tridimensional con materiales accesibles, cuidando la terminación y el detalle.</li>
+        <li>Resolver un sistema de packaging coherente con la identidad del objeto.</li>
+        <li>Narrar visualmente el origen y la personalidad del personaje a través de piezas gráficas y fotográficas.</li>
+        <li>Documentar el proceso proyectual de manera ordenada y argumentada.</li>
+        <li>Argumentar las decisiones de diseño desde la forma, la función y la comunicación.</li>
+    </ul>
+
+    <div class="caja-viejo">
+        <span class="tag tag-viejo">Referencia 2021</span>
+        <strong>Competencias del programa anterior:</strong> Aplicación de criterios innovadores para la mejora de un producto existente. Promoción de sentido sensorial para la percepción visual de espacios en el plano. Abordaje de problemas proyectuales a partir de implementación de metodología. Desarrollo de herramientas comunicacionales innovadoras en el campo.
+    </div>
+
+    <h3>Descriptores Actitudinales y Valores</h3>
+    <ul>
+        <li>Compromiso con el desarrollo del proyecto personal y del equipo.</li>
+        <li>Respeto por los tiempos de entrega y la presentación profesional de trabajos.</li>
+        <li>Colaboración entre pares en instancias de taller, revisión colectiva y trabajo grupal.</li>
+        <li>Curiosidad hacia los referentes de la cultura del designer toy y la escena local.</li>
+        <li>Ética profesional: honestidad intelectual, respeto por la propiedad intelectual, reconocimiento de fuentes y autores.</li>
+    </ul>
+
+    <div class="caja-viejo">
+        <span class="tag tag-viejo">Referencia 2021</span>
+        <strong>Valores del programa anterior:</strong> Compromiso asumido en el desarrollo de las actividades. Respeto por la presentación en tiempo y forma de los trabajos. Aplicación de principios éticos para el desarrollo de los trabajos. Orden en la presentación de trabajos. Colaboración entre pares en la presentación de trabajos.
+    </div>
+</section>
+
+<footer>
+    <p>Guía de Estudio Integrada — Comunicación Visual II</p>
+    <p>Escuela Provincial de Bellas Artes Tomás Cabrera N° 6002</p>
+    <p>Tecnicatura en Artes Visuales con Orientación en Diseño Gráfico — Plan 2007/02</p>
+    <p style="margin-top: 10px; color: #999;">Generada en agosto de 2026</p>
+    <p style="color: #999; font-size: 0.8rem;">Integra: Programa 2025/2026 (Lic. Gastón Iñiguez) + Programa 2021 (Prof. Claudia Quiroga) + Material complementario UNSAM + Etnografía Digital + Info útil de la escena</p>
+</footer>
+
+</div>
+
+</body>
+</html>
